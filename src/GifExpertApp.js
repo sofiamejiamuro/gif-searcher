@@ -7,7 +7,7 @@ const GifExpertApp = () => {
   // const no se deben mutar, cómo react sabe que hubo un cambio y hay que renderizar otra vez?, un arr no sirve
   // const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
 
-  const [categories, setCategories] = useState(['One Punch']);
+  const [categories, setCategories] = useState(['']);
   // Warning: Each child in a list should have a unique "key" prop.
   // category vs index
 

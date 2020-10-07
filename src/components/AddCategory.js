@@ -7,7 +7,7 @@ const AddCategory = ( { setCategories } ) => {
   const [inputValue, setinputValue] = useState('');
 
   const handleInputChange = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setinputValue(e.target.value)
   };
 
@@ -16,7 +16,7 @@ const AddCategory = ( { setCategories } ) => {
     console.log('Submit hecho');
     if( inputValue.trim().length > 1 ){
        // Con esta callback accedemos a las cats sin necesidad de que pasen como props
-      setCategories(cats => [...cats, inputValue ])
+      setCategories(cats => [ inputValue, ...cats ])
       setinputValue('')
     }
   };

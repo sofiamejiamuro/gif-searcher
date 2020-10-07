@@ -1,37 +1,61 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import GifGridItem from './GifGridItem';
+import getGifs from '../helpers/getGifs'
 
 const GifGrid = ({ category }) => {
 
-  // useState it is not convienient because each time react detects a change it will rerender so reretrieve the data, that is make the petition over and over
+  const [images, setimages] = useState([])
+
+  // useState it is not convienient because each time react detects a change it will rerender so reretrieve the data, that is make the petition over and over, e.g. counter
   // that's why we use useEffect(), that executes code conditionally 
 
   //(callback , arreglo de dependencias)
   useEffect(() => {
-    getGifs();
-  }, [])
+    // es una promesa
+    getGifs(category)
+    .then( imgs => setimages(imgs))
+  }, [ category ])
 
-
-  const getGifs = async() => {
-
-    const url = 'https://api.giphy.com/v1/gifs/search?q=cat&limit=10&api_key=9LfBNSlZUPaiGzvZGZwZVIAEIoxJvANu';
-    const resp = await fetch(url);
-    const { data } = await resp.json();
-
-    // console.log(data);
-    const gifs = data.map(img => {
-      return {
-        id: img.id,
-        title: img.title,
-        url: img.images.downsized_medium.url
-      }
+  /* 
+  Two different ways to write a map, depending on the explicit or implicit return 
+  {
+    images.map(img => {
+      return <li 
+        key={ img.id }
+      >
+        <p>{ img.title }</p>
+        <img src={ img.url }></img>
+      </li>
     })
-    // console.log(gifs);
   }
+  {
+    images.map(img => (
+      <li 
+        key={ img.id }
+      >
+        <p>{ img.title }</p>
+        <img src={ img.url }></img>
+      </li>
+    ))
+  } */
 
   return (
-    <div>
+    <>
       <h3>{ category }</h3>
-    </div>
+      <div className="card-grid">
+      
+
+          {
+            images.map(img => (
+              <GifGridItem 
+                key={ img.id }
+                { ...img }
+              />
+            ))
+          }
+
+      </div>
+    </>
   )
 }
 

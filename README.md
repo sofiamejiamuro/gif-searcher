@@ -4,15 +4,14 @@
 
 ### TOPICS
 
-- [ ] Custom Hooks
-- [ ] Fetch hacia una API
-- [ ] Comunicación entre componentes
-- [ ] Clases de CSS
-- [ ] Animaciones
-- [ ] Enviar métodos como argumentos
-- [ ] Crear listados
-- [ ] keys
-- [ ] Giphy
+- [x] Custom Hooks
+- [x] Fetch hacia una API
+- [x] Comunicación entre componentes
+- [x] Clases de CSS
+- [x] Animaciones
+- [x] Enviar métodos como argumentos
+- [x] Crear listados
+- [x] keys
 
 
 
