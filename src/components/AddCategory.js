@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 const AddCategory = ( { setCategories } ) => {
 
   // useState() si dejamos sin argumenttos el metodo es undefined, entonces inputValue es undefined
-  const [inputValue, setinputValue] = useState('');
+  const [ inputValue, setInputValue ] = useState('');
 
   const handleInputChange = (e) => {
-    //console.log(e.target.value);
-    setinputValue(e.target.value)
+    // console.log(e.target.value);
+    setInputValue(e.target.value)
   };
 
   const hanldeSubmit = (e) => {
     e.preventDefault();
-    console.log('Submit hecho');
+    //console.log('Submit hecho');
     if( inputValue.trim().length > 1 ){
-       // Con esta callback accedemos a las cats sin necesidad de que pasen como props
+       // Con esta callback accedemos a las cats sin necesidad de que pasen como props vs setCategories( ['Ranma 1/2',...categories] );
       setCategories(cats => [ inputValue, ...cats ])
-      setinputValue('')
+      setInputValue('')
     }
   };
 

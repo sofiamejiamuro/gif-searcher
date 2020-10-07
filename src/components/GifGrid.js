@@ -3,8 +3,8 @@ import GifGridItem from './GifGridItem';
 import getGifs from '../helpers/getGifs'
 
 const GifGrid = ({ category }) => {
-
-  const [images, setimages] = useState([])
+  // Donde category es un item string del array, ya paso por map 
+  const [ gifs, setGifs ] = useState([])
 
   // useState it is not convienient because each time react detects a change it will rerender so reretrieve the data, that is make the petition over and over, e.g. counter
   // that's why we use useEffect(), that executes code conditionally 
@@ -13,7 +13,8 @@ const GifGrid = ({ category }) => {
   useEffect(() => {
     // es una promesa
     getGifs(category)
-    .then( imgs => setimages(imgs))
+    // gifs es un array de objetos
+    .then( gifs => setGifs(gifs))
   }, [ category ])
 
   /* 
@@ -43,13 +44,11 @@ const GifGrid = ({ category }) => {
     <>
       <h3>{ category }</h3>
       <div className="card-grid">
-      
-
           {
-            images.map(img => (
+            gifs.map(gif => (
               <GifGridItem 
-                key={ img.id }
-                { ...img }
+                key={ gif.id }
+                { ...gif }
               />
             ))
           }
