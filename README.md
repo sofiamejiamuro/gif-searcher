@@ -1,9 +1,9 @@
 ## GIF-SEARCHER APP
 
 
-This project contains is based on the course [React: de cero a experto (hooks y mern)](https://www.udemy.com/share/103dsUBksSdFlTQHQ=/) by **Fernando Herrera**
 
 ### TOPICS
+
 - [ ] Custom Hooks
 - [ ] Fetch hacia una API
 - [ ] Comunicación entre componentes
@@ -13,3 +13,7 @@ This project contains is based on the course [React: de cero a experto (hooks y 
 - [ ] Crear listados
 - [ ] keys
 - [ ] Giphy
+
+
+
+This project content is based on the course [React: de cero a experto (hooks y mern)](https://www.udemy.com/share/103dsUBksSdFlTQHQ=/) by **Fernando Herrera**
