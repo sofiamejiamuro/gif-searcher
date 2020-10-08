@@ -4,7 +4,7 @@ const getGifs = async( category ) => {
   const resp = await fetch(url);
   const { data } = await resp.json();
 
-  console.log(data);
+  console.log('data en fetch',data);
   // Array de onbjetos que vamos a mapear para obtener otro array de objetos con as propiedades que necesitamos de cada uno 
   const gifs = data.map(gif => {
     return {
@@ -13,7 +13,8 @@ const getGifs = async( category ) => {
       url: gif.images.downsized_medium.url
     }
   })
-  console.log(gifs);
+
+  console.log('gifs', gifs);
   return gifs;
 }
 
