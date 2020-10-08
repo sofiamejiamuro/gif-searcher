@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import GifGridItem from './GifGridItem';
 import useFetchGifs from '../hooks/useFetchGifs';
 // import getGifs from '../helpers/getGifs'
 
 const GifGrid = ({ category }) => {
 
-  const { data:images , loading } = useFetchGifs(category);
-  console.log('dataengifgrid',images); // Un Arry que contiene un Array de Objetos
+  const { data:gifs , loading } = useFetchGifs(category);
+  // console.log('dataengifgrid',images); // Un Arry que contiene un Array de Objetos
 
 
   // Donde category es un item string del array, ya paso por map 
@@ -49,13 +49,16 @@ const GifGrid = ({ category }) => {
   return (
     <>
       <h3>{ category }</h3>
+
+      { loading && <p>Loading</p> }
+
       <div className="card-grid">
       {
         // console.log('images',images) // 
-        images.map((img) => (
+        gifs.map((gif) => (
           <GifGridItem 
-            key={ img.id }
-            { ...img }
+            key={ gif.id }
+            { ...gif }
           />
         ))
       }

@@ -1,7 +1,5 @@
 ## GIF-SEARCHER APP
 
-
-
 ### TOPICS
 
 - [x] Custom Hooks

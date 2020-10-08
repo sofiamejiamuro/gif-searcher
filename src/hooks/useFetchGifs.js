@@ -15,15 +15,15 @@ const useFetchGifs = ( category ) => {
     // Es una promesa
     getGifs(category)
       .then( gifs => {
-        console.log('gifsenpromesa',gifs);
+        // console.log('gifsenpromesa',gifs);
         setState({
           data:gifs,
           loading: false
         })
       })
-  }, [ ])
+  }, [ category ])
 
-  console.log('dataarrdeobj',state.data);
+  // console.log('dataarrdeobj',state.data);
   return state
 
 }
