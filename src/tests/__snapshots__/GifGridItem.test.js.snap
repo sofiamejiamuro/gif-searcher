@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas en componente GifGridItem Debe de mostrar el componente correctamente 1`] = `
+exports[`Pruebas en componente GifGridItem Debe de mostrar el componente correctamente y sus proptypes 1`] = `
 <div
   className="card animate__animated animate__rubberBand"
 >
-  <p />
-  <img />
+  <p>
+    Ranma
+  </p>
+  <img
+    alt="Ranma"
+    src="https://algunacosa"
+  />
 </div>
 `;
